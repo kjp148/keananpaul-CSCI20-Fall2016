@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 /* HEADER
 
@@ -33,11 +34,11 @@ int main() {
   
   //User input
   cout << "[COMPUTER]: Please enter an occupation." << endl<< ">";
-  cin >> char_job;
+  getline(cin, char_job);
   cout << endl;
   
   cout << "[COMPUTER]: Please enter a name." << endl << ">";
-  cin >> char_name;
+  getline(cin, char_name);
   cout << endl;
   
   cout << "[COMPTUER]: Please enter an adjective." << endl << ">";
@@ -80,7 +81,5 @@ int main() {
   cout << " " << noun1 << " " << verb2 << " his village. Cowarldy " << char_name;
   cout << " needed to save his village by defeating the " << noun1;
   cout << " using only his " << throw_amt << " " << throwable << ".";
-  
-  
   
 }
