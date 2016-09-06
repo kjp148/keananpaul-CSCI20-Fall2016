@@ -1,3 +1,5 @@
+using namespace std;
+int main() {
 /*Guessing game algorithm
 
 1. Computer picks random number between 1 and 10
@@ -15,3 +17,5 @@
 - IF the number is lower THEN the player removes all numbers from the guessed number and up.
 
 7. Player repeats from step 2 until player wins.*/
+cout << "That's all she wrote.";
+}

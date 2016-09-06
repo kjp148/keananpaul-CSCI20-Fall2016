@@ -82,7 +82,7 @@ int main() {
   cout << "There was a cowardly " << char_job << " named " << char_name << ".";
   cout << " " << char_name << " lived in the village of " << village << ".";
   cout << "He was " << adj1 << " and very " << adj2 << ", but he still enjoyed ";
-  cout << verb1 << "." << " One morning he awakened to the sound of" << noun_amt;
+  cout << verb1 << "." << " One morning he awakened to the sound of " << noun_amt;
   cout << " " << noun1 << " " << verb2 << " his village. Cowarldy " << char_name;
   cout << " needed to save his village by defeating the " << noun1;
   cout << " using only his " << throw_amt << " " << throwable << ".";
