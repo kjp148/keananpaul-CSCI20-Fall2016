@@ -15,6 +15,7 @@ int main() {
   monsterStruct monsterOne;
   monsterStruct monsterTwo;
   monsterStruct monsterThree;
+  monsterStruct monsterFour;
   
   //Monster One
   cout << "Lets create a monster!" << endl;
