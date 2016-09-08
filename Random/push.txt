@@ -1,0 +1,3 @@
+git add lab4
+git commit –a –m ‘Lab 4 submission’
+git push
