@@ -42,9 +42,12 @@ int main() {
   net = gross - (gross * 0.17); //Tax calc
   
   //Output
-  cout << "Your gross pay is: $" << gross << " per week." << endl;
-  cout << "Your net pay is: $" << net << " per week." << endl;
-  
+  cout << endl << "Tax rate = 17%" << endl;
+  cout << "Name:         " << name << endl;
+  cout << "Payrate:      $" << pay << endl;
+  cout << "Hours:        " << hours << endl;
+  cout << "Weekly Gross: " << gross << endl;
+  cout << "Weekly Net:   " << net << endl;
   
 
 }
