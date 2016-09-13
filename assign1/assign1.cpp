@@ -13,7 +13,9 @@ using namespace std;
 
   Create variables
   Take input from user: [Name] [hours] [pay rate]
-  Calculate taxes
+  Calculate weekly gross and net pay
+  grossPay = weekly hours * payrate
+  netPay = grossPay - (grossPay * 17%)
   Output info
 
 */
