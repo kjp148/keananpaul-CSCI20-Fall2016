@@ -2,10 +2,12 @@
 using namespace std;
 
 class TemperatureConverter {
-  public:
+  public:. 
+  
+    TemperatureConverter(double entry);
     
-    TemperatureConverter() :: TemperatureConverter() {
-      kelvin = 0;
+    TemperatureConverter :: TemperatureConverter(double entry) {
+      kelvin = entry;
     }
     
     void SetTempFromKelvin(double entered_temp) { //Sets the user value to kelvin
@@ -32,9 +34,11 @@ class TemperatureConverter {
       return (((kelvin * 9) / 5 + 32) - 273.15);
     }
     
-    /*void PrintTemps() {
-      cout << GetTempAsCelsius(kelvin) << endl;
-    }*/
+    void PrintTemps() {
+      cout << GetTempFromKelvin() << endl;
+      cout << GetTempAsCelsius() << endl;
+      cout << GetTempAsFahrenheit() << endl;
+    }
     
   private:
   
