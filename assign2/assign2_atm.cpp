@@ -29,6 +29,8 @@ class atmFunctions {
                 
         case 4: cout << "Bye";
                 return;
+                
+        default: cout << "Incorrect input. Try again." << endl;
       }
     }
   }
