@@ -1,4 +1,4 @@
-#include <assign2_atm.cpp>
+#include "assign2_atm.cpp"
 using namespace std;
 
 /* HEADER
@@ -42,5 +42,7 @@ class atmFunctions() {
 
  */
 int main() {
+  atmFunctions atm;
+  atm.menu();
 
 }
