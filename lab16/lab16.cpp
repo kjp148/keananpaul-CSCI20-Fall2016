@@ -42,7 +42,7 @@ int main() {
   	cout << endl << "Please pick an action (Enter q to quit): ";
   	cin >> userIn;
   	cout << endl;
-  	userItem = userIn - 48; //Subtracting 48 from char gives correct ascii for intager
+  	userItem = userIn - 48; //Subtracting 48 from char gives correct ascii for integer.
   	
   	if(userItem < 10 && userItem > -1) {
   	  if(invNum[userItem] > 0) {
