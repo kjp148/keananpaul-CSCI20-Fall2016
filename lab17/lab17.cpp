@@ -86,7 +86,7 @@ while(name_check != 'q') {
   	    break;
   	    
   	  default:
-  	    cout << "Incorrect entry.  Try again." << endl;
+  	    cout << endl << "Oops. Incorrect entry. Try again." << endl;
   	    break;
   	}
   }

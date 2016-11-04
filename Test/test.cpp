@@ -5,26 +5,14 @@ using namespace std;
 
 int main()
 {
-   string line;
-   ifstream fin;
-   ofstream fout;
-   
-   fin.open("read.txt");
-   fout.open("output.txt");
 
-   while(!fin.eof())
-   {
-      getline(fin, line);
-      if(fin.eof()) {
-      	fout<<line;
-      }
-      else {
-        fout<<line<<endl;
-      }
-   }
+string myName = "Keanan";
+string yourName = "Gabrielle";
 
-   fin.close();
-   fout.close();
-
-   return 0;
+if (myName > yourName) {
+  cout << "My name is greater";
+}
+else {
+  cout << "You suck";
+}
 }
