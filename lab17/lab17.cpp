@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int main() {
@@ -10,7 +11,7 @@ int main() {
   int user_entry = 0;
   int length = 0;
   
-//while(name_check != 'q') {
+while(name_check != 'q') {
   exit_char = 0;
   while(exit_char != 'q') {
   	cout << "Please enter your first name: ";
@@ -24,7 +25,7 @@ int main() {
       exit_char = 'q';
   	}
   	else {
-  	  cout << "Try again.  Needs to be less than 10 characters" << endl;
+  	  cout << "Try again.  Needs to be less than 10 characters." << endl;
   	}
   }
   
@@ -41,19 +42,19 @@ int main() {
       exit_char = 'q';
   	}
   	else {
-  	  cout << "Try again.  Needs to be less than 10 characters" << endl;
+  	  cout << "Try again.  Needs to be less than 20 characters." << endl;
   	}
   }
   
   cout << endl << "Name: " << user_first << " " << user_last << endl;
   
-  //if(user_first == user_last) { //Checks to make sure first and last name aren't the same.
-  //	cout << "First and last name cannot be the same.  Try again." << endl << endl;
-  //}
-  //else {						<DISABLED NAME CHECK>
-  //	name_check = 'q';
-  //}
-//}
+  if(strcmp(user_first, user_last) == false) {
+  	cout << endl << "First and last name cannot be the same. Try again." << endl;
+  }
+  else {
+  	name_check = 'q';
+  }
+}
   
   exit_char = 0;
   while (exit_char != 'q') {
