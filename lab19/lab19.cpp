@@ -22,19 +22,34 @@ int main() {
   	
   	for(j = 0; j < 4; j++) {
   	  fin >> fileInt[i][j];
-      cout << fileInt[i][j] << "     ";
-      rowTotal[i] += fileInt[i][j];
-      colTotal[j] += fileInt[i][j];
-      
-      cout << endl << "Row[" << i + 1 << "]: " << rowTotal[j] << endl;
-      cout << "Col[" << j + 1 << "]: " << colTotal[i] << endl;
   	}
   	
   }
   
+  //Row total
+  for(i = 0; i < 3; i++) {
+    for(j = 0; j < 4; j++) {
+      rowTotal[i] += fileInt[i][j];
+    }
+  }
   
+  //Column total
+  for(j = 0; j < 4; j++) {
+    for(i = 0; i < 3; i++) {
+      colTotal[j] += fileInt[i][j];
+    }
+  }
   
+  for(i = 0; i < 3; i++) {
+    for(j = 0; j < 4; j++) {
+  	  fout << setw(4) << fileInt[i][j];
+  	}
+  	fout << setw(4) << rowTotal[i] << endl;
+  }
   
+  for(j = 0; j < 4; j++) {
+  	fout << setw(4) << colTotal[j];
+  }
   
   fin.close();
   fout.close();
