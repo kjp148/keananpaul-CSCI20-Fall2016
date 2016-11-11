@@ -4,9 +4,34 @@
 #include <iomanip>
 using namespace std;
 
+
+class Balance {
+  public:
+  
+  float balanceCalc(float _trans_money[], string _trans_num[], int i) {
+    
+    float acc_total = 0.0;
+    int j = 0; //Total calc helper
+    size_t found = 0; //Used for string finding
+    
+    for(j = 0; j < i; j++) {
+  	  found = _trans_num[j].find("deposit");
+      if(found != string::npos) {
+        acc_total += _trans_money[j];
+      }
+      else {
+        acc_total -= _trans_money[j];
+      }
+    
+    }
+    return acc_total;
+  }
+};
+
 int main() {
   ifstream fin;
   ofstream fout;
+  Balance myClass;
   
   string trans_num[10] = {"", "", "", "", "", "", "", "", "", ""};
   string trans_date[10] = {"", "", "", "", "", "", "", "", "", ""};
@@ -14,7 +39,6 @@ int main() {
   float trans_money[10] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
   float acc_total = 0.0;
   int i = 0; //Trans count
-  int j = 0; //Total calc helper
   int k = 0; //Starting line space remover
 
 
@@ -32,7 +56,7 @@ int main() {
     fin >> trans_money[i];
     
 
-    //
+    //Console printing
     //For some reason this is required to not print an extra space at the beginning.
     if(k == 1) {
       cout << setw(9) << left << setfill(' ') << trans_num[i];
@@ -68,16 +92,9 @@ int main() {
     i++;
   }
   
+  //Balance calc.
+  acc_total = myClass.balanceCalc(trans_money, trans_num, i);
 
-  //Account balance.
-  for(j = 0; j < i; j++) {
-    if(trans_num[j] == "deposit") {
-      acc_total += trans_money[j];
-    }
-    else {
-      acc_total -= trans_money[j];
-    }
-  }
   
 
   cout << endl << endl << setprecision(2) << fixed << "Total balance: $" << acc_total;

@@ -17,4 +17,4 @@ deposit  |   8/1 | -               | $300.00
 421      | 12/10 | SuperTarget     | $88.99
 
 
-Total balance: $-555.80
+Total balance: $644.20

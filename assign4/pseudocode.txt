@@ -1,0 +1,32 @@
+#include libraries:
+iostream
+fstream
+string
+iomanip
+
+main() {
+  in object
+  out object
+  
+  string transactionNumberArray
+  string transactionDateArray
+  string transactionUserArray
+  float transactionMoneyArray
+  float accountTotal
+  tempInt's i, j k
+  
+  while not at end of file {
+    getline until ':'
+  }
+  
+  print to user interface
+  
+  print to file
+  
+  calculate total
+  
+  print total
+}
+  
+  
+  
