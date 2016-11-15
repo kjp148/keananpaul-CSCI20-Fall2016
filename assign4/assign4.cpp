@@ -38,11 +38,25 @@ int main() {
   string trans_user[10] = {"", "", "", "", "", "", "", "", "", ""};
   float trans_money[10] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
   float acc_total = 0.0;
+  string fileName = "";
   int i = 0; //Trans count
   int k = 0; //Starting line space remover
+  
+  while(!fin.is_open()) {
+    cout << "Please enter a file name: ";
+    cin >> fileName;
+    cout << endl << endl;
+    
+    fin.open(fileName);
+    
+    if(fin.is_open()) {
+      
+    }
+    else {
+      cout << "That file name may not exist. Try again." << endl;
+    }    
+  }
 
-
-  fin.open("checkbook.txt");
   fout.open("bankData.txt");
   
   //Title bar
