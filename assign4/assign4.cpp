@@ -4,7 +4,6 @@
 #include <iomanip>
 using namespace std;
 
-
 class Balance {
   public:
   
@@ -109,12 +108,9 @@ int main() {
   //Balance calc.
   acc_total = myClass.balanceCalc(trans_money, trans_num, i);
 
-  
-
   cout << endl << endl << setprecision(2) << fixed << "Total balance: $" << acc_total;
   
   fout << endl << endl << setprecision(2) << fixed << "Total balance: $" << acc_total;
-
 
   fin.close();
   fout.close();

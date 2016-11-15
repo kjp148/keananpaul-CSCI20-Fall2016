@@ -3,16 +3,21 @@
 #include <string>
 using namespace std;
 
+
+void function() {
+
+}
+
 int main()
 {
 
-string myName = "Keanan";
-string yourName = "Gabrielle";
+int *x;
+int y = 5;
 
-if (myName > yourName) {
-  cout << "My name is greater";
-}
-else {
-  cout << "You suck";
-}
+
+
+x = &y;
+
+cout << *x;
+
 }

@@ -1,0 +1,77 @@
+I found this idea for a program from (user: ultifinitus) at (http://www.cplusplus.com/forum/general/53812/)
+
+I'm going to create a journal that automatically enters the date and time of the entry followed by the entry.  To access the journals you will need to enter a username and password.
+The username will point to a text file and the password will grant access to this file.  If the file doesn't exist it will say it doesn't and ask about creating a new one.
+
+Pseudocode:
+
+include libraries:
+iostream
+string
+fstream
+iomanip
+
+include files:
+assign4class.cpp
+
+using namespace standard
+
+main
+{
+
+  string username
+  string password
+  
+  print Enter username:
+  userEntry username
+  
+  check for file
+  
+  if(file exists)
+  {
+    print Enter password:
+    userEntry password
+    
+    check if password is correct
+    
+    if(password is correct)
+    {
+      open journal file
+      ask user if they would like to access old journals or create a new one
+      
+      if(create new one)
+      {
+        while(userEnteredLine != "Exit" or "exit")
+        {
+          access current date and time and assign to variables
+          print This journal entry will be set for (Current date and time)
+          print Insert the entry below.  When finished hit enter and type "Exit":
+          userEntry output to file until exit is entered
+        }
+      }
+      else if(access old journals)
+      {
+        print journal file
+      }
+      else
+      {
+        print Incorrect Entry. Try again.
+      }
+    }
+    else
+    {
+      print Password Incorrect. Try again.
+    }
+  }
+  else if(username == "new" or "New")
+  {
+    create new file for username
+  }
+  else
+  {
+    print Doesn't look like there is a journal for this username.
+    print If you think there is one carefully retype username.
+    print If you would like to create a new journal type "New".
+  }
+  
+}
