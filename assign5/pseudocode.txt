@@ -1,9 +1,14 @@
+<~~Proposal~~>
+
 I found this idea for a program from (user: ultifinitus) at (http://www.cplusplus.com/forum/general/53812/)
 
-I'm going to create a journal that automatically enters the date and time of the entry followed by the entry.  To access the journals you will need to enter a username and password.
+I'm going to create a journal that automatically enters the date and time of the entry followed by the entry. To access the journals you will need to enter a username and password.
 The username will point to a text file and the password will grant access to this file.  If the file doesn't exist it will say it doesn't and ask about creating a new one.
 
-Pseudocode:
+<~~End Proposal~~>
+
+
+<~~Pseudocode~~>
 
 include libraries:
 iostream
@@ -19,29 +24,31 @@ using namespace standard
 main
 {
 
-  string username
-  string password
+while(username != "Exit" or "exit") //If user enters exit the program ends
+{
+  string username //Variable for entered username
+  string password //Variable for entered password
   
   print Enter username:
-  userEntry username
+  userEntry username //User enters desired username
   
-  check for file
+  check for file //Uses username variable to access file with the same name
   
-  if(file exists)
+  if(file exists) //Uses is_open() function to check if file is open (and thus exists)
   {
     print Enter password:
-    userEntry password
+    userEntry password //User enters password for selected username
     
-    check if password is correct
+    check if password is correct //Password will be stored either in a password database file or the journal file
     
-    if(password is correct)
+    if(password is correct) //Checks variable password against the file's password entry
     {
       open journal file
       ask user if they would like to access old journals or create a new one
       
       if(create new one)
       {
-        while(userEnteredLine != "Exit" or "exit")
+        while(userEnteredLine != "Exit" or "exit") //The user is allowed to write lines in the journal until they type exit on a new line and hit enter
         {
           access current date and time and assign to variables
           print This journal entry will be set for (Current date and time)
@@ -51,7 +58,7 @@ main
       }
       else if(access old journals)
       {
-        print journal file
+        print journal file //Only prints the body, disincluding any data (password, username, comments)
       }
       else
       {
@@ -67,11 +74,17 @@ main
   {
     create new file for username
   }
+  else if(username == "Exit" or "exit")
+  {
+  
+  }
   else
   {
     print Doesn't look like there is a journal for this username.
     print If you think there is one carefully retype username.
     print If you would like to create a new journal type "New".
   }
-  
 }
+}
+
+<~~End Pseudocode~~>
