@@ -10,7 +10,7 @@ using namespace std;
    Author: Keanan Paul
    Date Created: 11/14/2016
    
-*/
+ */
 
 int main()
 {
@@ -46,6 +46,9 @@ int main()
     if(fileExists == true)
     {
       cout << "File found." << endl;
+      cout << "Please enter your password: ";
+      cin >> password;
+      
     }
     else
     {
@@ -66,11 +69,11 @@ int main()
         if(fin.is_open())
         {
           fileExists = true;
+          usernameFile = "journals/";
         }
         else
         {
           fileExists = false;
-          usernameFile = "journals/";
         }
         fin.close();
         /* <~~End File Check~~> */
@@ -82,12 +85,14 @@ int main()
         else
         {
           fout.open(usernameFile);
-          //FIXME: File not creating
+          fout << "<~~Begin Header~~>" << endl;
           fout << "Username: " << username << endl;
+          cout << "File created." << endl;
           cout << "Please enter a password for this file" << endl;
           cout << "New Password: ";
           cin >> password;
           fout << "Password: " << password << endl;
+          fout << "<~~End Header~~>" << endl << endl;
         }
       }
       else

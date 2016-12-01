@@ -4,13 +4,14 @@ I found this idea for a program from (user: ultifinitus) at (http://www.cplusplu
 
 I'm going to create a journal that automatically enters the date and time of the entry followed by the entry. To access the journals you will need to enter a username and password.
 The username will point to a text file and the password will grant access to this file.  If the file doesn't exist it will say it doesn't and ask about creating a new one.
+The user will also be able to type in a specific date and it will bring up all entrys from that date.
 
 <~~End Proposal~~>
 
 
 <~~Pseudocode~~>
 
-include libraries:
+#include libraries:
 iostream
 string
 fstream
@@ -58,7 +59,19 @@ while(username != "Exit" or "exit") //If user enters exit the program ends
       }
       else if(access old journals)
       {
-        print journal file //Only prints the body, disincluding any data (password, username, comments)
+        print Please type the date and all journals from that date will be displayed. (Use format MM/DD/YYYY)
+        
+        accepts user entry of a date.
+        
+        Searches for identifier with date
+        if(entry's exist)
+        {
+        prints all journal entrys containing this identifier-date combination.  //Only prints the body, disincluding any data (password, username, comments)
+        }
+        else
+        {
+        print No journal entry from such date exists
+        }
       }
       else
       {
