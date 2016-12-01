@@ -1,5 +1,4 @@
-#include "MyClass.cpp"
-using namespace std;
+#include "lab21.h"
 
 // Program starts here
 int main() {
