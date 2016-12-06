@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include <iomanip>
-#include "assign5class.cpp"
+#include "assign5functions.cpp"
 using namespace std;
 
 /* HEADER
@@ -14,6 +14,7 @@ using namespace std;
 
 int main()
 {
+  Functions funct;
 
   string username     = "";
   string password     = "";
@@ -29,19 +30,7 @@ int main()
     cout << "Enter username: ";
     cin >> username;
     
-    /* <~~File Check~~> */
-    usernameFile += username;
-    fin.open(usernameFile);
-    if(fin.is_open())
-    {
-      fileExists = true;
-    }
-    else
-    {
-      fileExists = false;
-      usernameFile = "journals/";
-    }
-    /* <~~End File Check~~> */
+    fileExists = funct.fileCheck(username, usernameFile); //Checks for file existance and sets username file correctly.
     
     if(fileExists == true)
     {
@@ -49,9 +38,20 @@ int main()
       cout << "Please enter your password: ";
       cin >> password;
       
+      if(funct.passCheck(password, usernameFile) == true)
+      {
+        fin.open(usernameFile);
+        cout << "Password Correct." << endl;
+      }
+      else
+      {
+        cout << "Incorrect Password.  Try again." << endl << endl;
+      }
     }
     else
     {
+      usernameFile = "journals/"; //Sets usernameFile back to folder path.
+      
       if(username == "Exit" || username == "exit")
       {
         cout << "Exiting...";
@@ -63,24 +63,12 @@ int main()
         cout << "New Username: ";
         cin >> username;
         
-        /* <~~File Check~~> */
-        usernameFile += username;
-        fin.open(usernameFile);
-        if(fin.is_open())
-        {
-          fileExists = true;
-          usernameFile = "journals/";
-        }
-        else
-        {
-          fileExists = false;
-        }
-        fin.close();
-        /* <~~End File Check~~> */
+        fileExists = funct.fileCheck(username, usernameFile);
         
         if(fileExists == true)
         {
           cout << "A file already exists for this username.  Try again." << endl;
+          usernameFile = "journals/"; //Sets usernameFile back to folder path.
         }
         else
         {
@@ -93,6 +81,7 @@ int main()
           cin >> password;
           fout << "Password: " << password << endl;
           fout << "<~~End Header~~>" << endl << endl;
+          usernameFile = "journals/"; //Sets usernameFile back to folder path.
         }
       }
       else
